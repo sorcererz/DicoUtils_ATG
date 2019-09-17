@@ -6,9 +6,9 @@ import java.io.IOException;
 
 public class DicoLoader {
 
-	public static void Loader(String[] args) {
+	public static void main(String[] args) {
 
-		final String FILENAME = "text.txt";
+		final String FILENAME = "dictionnaire.txt";
 
 		try (BufferedReader bufferedreader = new BufferedReader(new FileReader(FILENAME))) {
 			String strCurrentLine;
