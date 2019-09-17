@@ -4,7 +4,8 @@ public class DicoUtils {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		 DicoIHM ihm = new DicoIHM();
+		 ihm.displayWelcome();
 	}
 
 }
