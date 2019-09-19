@@ -17,6 +17,9 @@ public class DicoUtils {
 			choice = Integer.parseInt(strChoice);
 
 			switch (choice) {
+			case 0:
+				ihm.display("Sortie");
+				break;
 			case 1:
 				ihm.display("Enter your word :");
 				String type1 = ihm.read(); // new instance of a value typed into the terminal
@@ -48,7 +51,7 @@ public class DicoUtils {
 				ihm.display(search.byRegex(arrayDico, type5));
 				break;
 			default:
-				ihm.display("Sortie");
+				ihm.display("Erreur ! Selectionnez un des choix proposé");
 				break;
 			}
 
