@@ -3,62 +3,66 @@ package fr.wcs.atg.dicoutils;
 public class DicoSearch {
 
 	public String byEquals(String[] arrayARG, String StringARG) {
+		boolean result = false;
 		for (int i = 0; i < arrayARG.length; i++) {
 			boolean answer = arrayARG[i].equals(StringARG);
-			if (answer = true) {
-				return "Trouvé !";
-			} else {
-				return "Pas trouvé !";
+			if (answer) {
+				result = true;
+				break;
 			}
 		}
-		return "Erreur";
+		return result ? "Trouvé" : "Pas trouvé !";
 	}
 
 	public String byContains(String[] arrayARG, String StringARG) {
+		StringBuilder sb = new StringBuilder();
+		boolean result = false;
 		for (int i = 0; i < arrayARG.length; i++) {
-			boolean answer = arrayARG[i].contains(StringARG);
-			if (answer = true) {
-				return "Trouvé !";
-			} else {
-				return "Pas trouvé !";
+			if (arrayARG[i].contains(StringARG)) {
+				result = true;
+	            sb.append(arrayARG[i]);
+	            sb.append('\r');
 			}
 		}
-		return "Erreur";
+		return result ? sb.toString() : "Pas trouvé !";
 	}
-
+	
 	public String byStartsWith(String[] arrayARG, String StringARG) {
+		StringBuilder sb = new StringBuilder();
+		boolean result = false;
 		for (int i = 0; i < arrayARG.length; i++) {
-			boolean answer = arrayARG[i].startsWith(StringARG);
-			if (answer = true) {
-				return "Trouvé !";
-			} else {
-				return "Pas trouvé !";
+			if (arrayARG[i].startsWith(StringARG)) {
+				result = true;
+	            sb.append(arrayARG[i]);
+	            sb.append('\r');
 			}
 		}
-		return "Erreur";
+		return result ? sb.toString() : "Pas trouvé !";
 	}
 
 	public String byEndsWith(String[] arrayARG, String StringARG) {
+		StringBuilder sb = new StringBuilder();
+		boolean result = false;
 		for (int i = 0; i < arrayARG.length; i++) {
-			boolean answer = arrayARG[i].endsWith(StringARG);
-			if (answer = true) {
-				return "Trouvé !";
-			} else {
-				return "Pas trouvé !";
+			if (arrayARG[i].endsWith(StringARG)) {
+				result = true;
+	            sb.append(arrayARG[i]);
+	            sb.append('\r');
 			}
 		}
-		return "Erreur";
+		return result ? sb.toString() : "Pas trouvé !";
 	}
-
+	
 	public String byRegex(String[] arrayARG, String StringARG) {
+		StringBuilder sb = new StringBuilder();
+		boolean result = false;
 		for (int i = 0; i < arrayARG.length; i++) {
-			boolean answer = arrayARG[i].matches(StringARG);
-			if (answer = true) {
-				return "Trouvé !";
-			} else {
-				return "Pas trouvé !";
+			if (arrayARG[i].matches(StringARG)) {
+				result = true;
+	            sb.append(arrayARG[i]);
+	            sb.append('\r');
 			}
 		}
-		return "Erreur";
+		return result ? sb.toString() : "Pas trouvé !";
 	}
 }

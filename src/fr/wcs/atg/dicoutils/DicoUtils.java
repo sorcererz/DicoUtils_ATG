@@ -1,8 +1,5 @@
 package fr.wcs.atg.dicoutils;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class DicoUtils {
 
 	public static void main(String[] args) {
@@ -13,7 +10,9 @@ public class DicoUtils {
 		ihm.display("Enter your name :");
 		String name = ihm.read(); // new instance of a value typed into the terminal
 		ihm.display(name);
-		String zyth = "(.*)yth";
-		ihm.display(search.byRegex(arrayDico, zyth));
+		String zyth = "z";
+		ihm.display(search.byEquals(arrayDico, zyth));
+		String answer = search.byStartsWith(arrayDico, zyth);
+		ihm.display(answer);
 	}
 }
